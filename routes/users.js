@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/ss', function (req, res, next) {
+  res.send('asdf');
+});
+
 module.exports = router;
