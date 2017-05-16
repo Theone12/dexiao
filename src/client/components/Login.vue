@@ -24,7 +24,7 @@ export default {
       src: '/images/2.1.jpg',
       bgImg: {
         background: "url('/images/18.jpg')",
-        backgroundSize: "100% 100%"
+        backgroundSize: '100% 100%'
       }
     }
   }
