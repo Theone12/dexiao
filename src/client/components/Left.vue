@@ -76,9 +76,10 @@ export default {
 <style scoped>
   .left {
     width: 150px;
-    height: 430px;
+    height: calc(100% - 80px);
     text-align: center;
     border: 1px solid #000;
+    overflow-y: auto;
   }
   .left ul li {
     /*height: 50px;*/

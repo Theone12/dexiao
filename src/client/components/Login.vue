@@ -23,19 +23,17 @@ export default {
     return {
       src: '/images/2.1.jpg',
       bgImg: {
-        background: "url('/images/18.jpg')"
+        background: "url('/images/18.jpg')",
+        backgroundSize: "100% 100%"
       }
     }
   }
 }
 </script>
 <style scoped>
-  *{
-    margin: 0;
-    padding: 0;
-  }
+  
   .bigBox {
-    height: 525px;
+    height: 100%;
   }
   .loginBox{
     width: 350px;
