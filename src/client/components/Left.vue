@@ -5,9 +5,9 @@
       <li>
         <p @click='tg1'>用户管理</p>
         <div v-show='show1'>
-          <p>普通用户</p>
-          <p>会员用户</p>
-          <p>商户用户</p>
+          <p><router-link to='/index/user'>普通用户</router-link></p>
+          <p><router-link to='/index/userVip'>会员用户</router-link></p>
+          <p><router-link to='/index/userShop'>商户用户</router-link></p>
         </div>
       </li>
       <li>
@@ -75,8 +75,8 @@ export default {
 
 <style scoped>
   .left {
-    width: 150px;
-    height: calc(100% - 80px);
+    width: 15%;
+    height: 85%;
     text-align: center;
     border: 1px solid #000;
     overflow-y: auto;

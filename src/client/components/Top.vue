@@ -26,17 +26,17 @@ export default {
 
 <style scoped>
   .head {
-    height: 80px;
+    height: 15%;
     background-color: #9da0a4;
   }
   .left {
     width: 50%;
-    height: 80px;
+    height: 100%;
     float: left;
   }
   .left img {
     display: inline-block;
-    padding-left: 20px;
+    margin:10px 0 0 20px;
     vertical-align: middle;
     width: 50px;
     height: 50px;
@@ -44,7 +44,7 @@ export default {
   .left span {
     display: inline-block;
     margin-left: 15px;
-    font: 500 20px/80px '微软雅黑';
+    font: 500 20px/100% '微软雅黑';
   }
   .right {
     width: 50%;
