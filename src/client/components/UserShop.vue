@@ -64,7 +64,8 @@ export default {
 <style scoped>
   .user {
     width: 100%;
-    height:100%;
+    height:95%;
+    padding-top: 5px;
   }
   .top {
     height: 30px;

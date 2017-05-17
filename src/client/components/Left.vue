@@ -3,11 +3,11 @@
     <h3>首页</h3>
     <ul>
       <li>
-        <p @click='tg1'>用户管理</p>
+        <p @click='tg1' class="change">用户管理</p>
         <div v-show='show1'>
-          <p><router-link to='/index/user'>普通用户</router-link></p>
-          <p><router-link to='/index/userVip'>会员用户</router-link></p>
-          <p><router-link to='/index/userShop'>商户用户</router-link></p>
+          <p ><router-link to='/index/user' class="rl current">普通用户</router-link></p>
+          <p><router-link to='/index/userVip' class="rl">会员用户</router-link></p>
+          <p><router-link to='/index/userShop' class="rl">商户用户</router-link></p>
         </div>
       </li>
       <li>
@@ -78,11 +78,33 @@ export default {
     width: 15%;
     height: 85%;
     text-align: center;
+    background-color: #ccc;
     border: 1px solid #000;
     overflow-y: auto;
   }
+  .left h3 {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #000;
+  }
   .left ul li {
     /*height: 50px;*/
-    line-height: 50px;
+    line-height: 40px;
+    border-bottom: 1px solid #000;
+  }
+  .left ul li .change {
+    background-color: dimgrey;
+  }
+  .left ul li div p{
+     height: 30px;
+    line-height: 30px;
+  }
+  .left ul li div p .rl{
+    text-decoration: none;
+    font-size: 13px;
+    color: #000;
+  }
+  .left ul li div p .current {
+    color: blue;
   }
 </style>

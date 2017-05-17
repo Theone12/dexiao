@@ -40,7 +40,7 @@ export default {
     height: 85%;
   }
   .rightTop {
-    height: 25px;
+    height: 5%;
     padding-left: 10px;
     border-bottom: 1px solid #000;
   }

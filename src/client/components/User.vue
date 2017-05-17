@@ -51,10 +51,10 @@ export default {
   data () {
     return {
       tblist: [
-        { id: 1, name: '张三', score: '500/1000', grade: '4级',title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 2, name: '李四', score: '500/1000', grade: '4级',title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 3, name: '张三', score: '500/1000', grade: '4级',title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 4, name: '张三', score: '500/1000', grade: '4级',title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
+        { id: 1, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
+        { id: 2, name: '李四', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
+        { id: 3, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
+        { id: 4, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
       ]
     }
   }
@@ -64,7 +64,8 @@ export default {
 <style scoped>
   .user {
     width: 100%;
-    height:100%;
+    height: 95%;
+    padding-top: 5px;
   }
   .top {
     height: 30px;
