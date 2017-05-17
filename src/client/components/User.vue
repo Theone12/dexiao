@@ -15,7 +15,7 @@
       <table>
         <thead>
           <tr>
-            <th>id</th>
+            <th>序号</th>
             <th>姓名</th>
             <th>积分/公分</th>
             <th>等级</th>
@@ -38,26 +38,31 @@
               <td>{{ x.receive }}</td>
               <td> {{ x.complete }}</td>
               <td>{{ x.register }}</td>
-              <td><a href="#">{{ x.operation }}</a></td>
+              <td><a>{{ x.operation }}</a></td>
             </tr>
         </tbody>
       </table>
+      <page></page>
     </div>
   </div>
 </template>
 
 <script>
+ import page from './VuePage.vue'
 export default {
-  data () {
-    return {
-      tblist: [
-        { id: 1, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 2, name: '李四', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 3, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 4, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
-      ]
-    }
-  }
+   data () {
+     return {
+       tblist: [
+          { id: 1, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
+          { id: 2, name: '李四', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
+          { id: 3, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
+          { id: 4, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
+       ]
+     }
+   },
+   components: {
+     page
+   }
 }
 </script>
 

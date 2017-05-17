@@ -1,44 +1,34 @@
 <template>
   <div class='user'>
     <div class="top">
-      <span class="topLeft">用户列表</span>
+      <span class="topLeft">新闻列表</span>
       <span class="topRight">选择类型</span>
       <select name='user'>
-        <option value="1">姓名</option>
-        <option value="2">积分</option>
-        <option value="3">等级</option>
-        <option value="4">称号</option>
+        <option value="1">时间</option>
       </select>
       <input type="button" value="搜索">
     </div>
     <div class="bottom">
+      <button>添加</button>
       <table>
         <thead>
           <tr>
             <th>序号</th>
-            <th>姓名</th>
-            <th>积分/公分</th>
-            <th>等级</th>
-            <th>称号</th>
-            <th>发布任务</th>
-            <th>接收任务</th>
-            <th>完成次数</th>
-            <th>注册时间</th>
+            <th>标题</th>
+            <th>图片</th>
+            <th>内容</th>
+            <th>时间</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-            <tr v-for='x in tblist'>
+            <tr v-for='x in newslist'>
               <td>{{ x.id }}</td>
-              <td>{{ x.name }}</td>
-              <td>{{ x.score }}</td>
-              <td>{{ x.grade }}</td>
               <td>{{ x.title }}</td>
-              <td>{{ x.tasks }}</td>
-              <td>{{ x.receive }}</td>
-              <td> {{ x.complete }}</td>
-              <td>{{ x.register }}</td>
-              <td><a>{{ x.operation }}</a></td>
+              <td>{{ x.picture }}</td>
+              <td>{{ x.main }}</td>
+              <td>{{ x.time }}</td>
+              <td>{{ x.operation1 }}/{{ x.operation2}}</td>
             </tr>
         </tbody>
       </table>
@@ -52,11 +42,10 @@
 export default {
    data () {
      return {
-       tblist: [
-        { id: 1, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 2, name: '李四', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 3, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 4, name: '张七', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
+       newslist: [
+        { id: 1, title: '北京某敬老院', picture: '图片125', main: '发生一件...', time: '2017/06/20', operation1: '编辑', operation2: '删除' },
+        { id: 2, title: '北京某敬老院', picture: '图片126', main: '发生一件...', time: '2017/06/25', operation1: '编辑', operation2: '删除' },
+        { id: 3, title: '北京某敬老院', picture: '图片127', main: '发生一件...', time: '2017/06/22', operation1: '编辑', operation2: '删除' }
        ]
      }
    },
@@ -106,6 +95,16 @@ export default {
   .bottom {
     width: 100%;
     margin-top: 15px;
+  }
+  .bottom button {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    width: 50px;
+    height: 25px;
+    font-size: 16px;
+    line-height: 20px;
+    color: blue;
   }
   .bottom table {
     width: 95%;

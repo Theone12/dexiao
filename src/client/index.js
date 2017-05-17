@@ -7,6 +7,13 @@ import Index from './components/Index'
 import User from './components/User'
 import UserVip from './components/UserVip'
 import UserShop from './components/UserShop'
+import Completed from './components/Completed'
+import Unfinished from './components/Unfinished'
+import News from './components/News'
+import Picture from './components/Picture'
+import New from './components/New'
+import Seller from './components/Seller'
+import Password from './components/Password'
 
 Vue.config.debug = true
 Vue.use(Router)
@@ -21,7 +28,14 @@ const router = new Router({
       children: [
          { path: '/index/user', component: User },
          { path: '/index/userVip', component: UserVip },
-         { path: '/index/userShop', component: UserShop }
+         { path: '/index/userShop', component: UserShop },
+         { path: '/index/completed', component: Completed },
+         { path: '/index/unfinished', component: Unfinished },
+         { path: '/index/news', component: News },
+         { path: '/index/picture', component: Picture },
+         { path: '/index/new', component: New },
+         { path: '/index/seller', component: Seller },
+         { path: '/index/password', component: Password }
       ]
     }
   ]

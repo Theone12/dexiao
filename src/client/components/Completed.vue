@@ -1,13 +1,13 @@
 <template>
   <div class='user'>
     <div class="top">
-      <span class="topLeft">用户列表</span>
+      <span class="topLeft">任务列表</span>
       <span class="topRight">选择类型</span>
       <select name='user'>
-        <option value="1">姓名</option>
-        <option value="2">积分</option>
-        <option value="3">等级</option>
-        <option value="4">称号</option>
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">广州</option>
+        <option value="4">河北</option>
       </select>
       <input type="button" value="搜索">
     </div>
@@ -16,29 +16,29 @@
         <thead>
           <tr>
             <th>序号</th>
-            <th>姓名</th>
-            <th>积分/公分</th>
-            <th>等级</th>
-            <th>称号</th>
-            <th>发布任务</th>
-            <th>接收任务</th>
-            <th>完成次数</th>
-            <th>注册时间</th>
+            <th>标题</th>
+            <th>地址</th>
+            <th>内容</th>
+            <th>奖励公分</th>
+            <th>完成者</th>
+            <th>完成时间</th>
+            <th>发布者</th>
+            <th>发布时间</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-            <tr v-for='x in tblist'>
+            <tr v-for='x in relist'>
               <td>{{ x.id }}</td>
-              <td>{{ x.name }}</td>
-              <td>{{ x.score }}</td>
-              <td>{{ x.grade }}</td>
               <td>{{ x.title }}</td>
-              <td>{{ x.tasks }}</td>
-              <td>{{ x.receive }}</td>
-              <td> {{ x.complete }}</td>
-              <td>{{ x.register }}</td>
-              <td><a>{{ x.operation }}</a></td>
+              <td>{{ x.address }}</td>
+              <td>{{ x.main }}</td>
+              <td>{{ x.gongFen }}</td>
+              <td>{{ x.finishName }}</td>
+              <td>{{ x.finishTime }}</td>
+              <td> {{ x.publisher }}</td>
+              <td>{{ x.publishTime }}</td>
+              <td>{{ x.operation }}</td>
             </tr>
         </tbody>
       </table>
@@ -52,11 +52,10 @@
 export default {
    data () {
      return {
-       tblist: [
-        { id: 1, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 2, name: '李四', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 3, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-        { id: 4, name: '张七', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
+       relist: [
+        { id: 1, title: '打扫敬老院', address: '北京', main: '星期天打扫敬老院...', gongFen: 300, finishName: '李四', finishTime: '2017/06/20', publisher: '张三', publishTime: '2017/06/16', operation: '删除' },
+        { id: 2, title: '打扫敬老院', address: '北京', main: '星期天打扫敬老院...', gongFen: 300, finishName: '李四', finishTime: '2017/06/20', publisher: '张三', publishTime: '2017/06/16', operation: '删除' },
+        { id: 3, title: '打扫敬老院', address: '北京', main: '星期天打扫敬老院...', gongFen: 300, finishName: '李四', finishTime: '2017/06/20', publisher: '张三', publishTime: '2017/06/16', operation: '删除' }
        ]
      }
    },
@@ -117,5 +116,6 @@ export default {
     text-align: center;
     font-size: 14px;
     border:1px solid #000;
+    overflow: hidden;
   }
 </style>

@@ -15,7 +15,7 @@
       <table>
         <thead>
           <tr>
-            <th>序号</th>
+            <th>id</th>
             <th>姓名</th>
             <th>积分/公分</th>
             <th>等级</th>
@@ -38,7 +38,7 @@
               <td>{{ x.receive }}</td>
               <td> {{ x.complete }}</td>
               <td>{{ x.register }}</td>
-              <td><a>{{ x.operation }}</a></td>
+              <td><a href="#">{{ x.operation }}</a></td>
             </tr>
         </tbody>
       </table>

@@ -13,28 +13,28 @@
       <li>
         <p @click='tg2'>任务管理</p>
         <div v-show='show2'>
-          <p>已完成任务</p>
-          <p>未完成任务</p>
+          <p><router-link to='/index/completed' class="rl">已完成任务</router-link></p>
+          <p><router-link to='/index/unfinished' class="rl">未完成任务</router-link></p>
         </div>
       </li>
       <li >
         <p @click='tg3'>文档管理</p>
         <div v-show='show3'>
-          <p>新闻管理</p>
-          <p>图片管理</p>
+          <p><router-link to='/index/news' class="rl">新闻管理</router-link></p>
+          <p><router-link to='/index/picture' class="rl">图片管理</router-link></p>
         </div>
       </li>
       <li>
         <p @click='tg4'>商城管理</p>
         <div v-show='show4'>
-          <p>新品上市</p>
-          <p>商家推荐</p>
+          <p><router-link to='/index/new' class="rl">新品上市</router-link></p>
+          <p><router-link to='/index/seller' class="rl">商家推荐</router-link></p>
         </div>
       </li>
       <li>
         <p @click='tg5'>系统管理</p>
         <div v-show='show5'>
-          <p>密码管理</p>
+          <p><router-link to='/index/password' class="rl">密码管理</router-link></p>
         </div>
       </li>
     </ul>
