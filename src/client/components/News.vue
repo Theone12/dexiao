@@ -9,7 +9,7 @@
       <input type="button" value="搜索">
     </div>
     <div class="bottom">
-      <button>添加</button>
+      <button><router-link to='/newsadd'>添加</router-link></button>
       <table>
         <thead>
           <tr>

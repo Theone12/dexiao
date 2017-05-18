@@ -5,7 +5,7 @@
             @current-change="handleCurrentChange"
             :current-page.sync="currentPage"
             :page-sizes="[20, 30, 50]"
-            :page-size="10"
+            :page-size="50"
             layout="sizes, prev, pager, next"
             :total="1000">
     </el-pagination>
@@ -16,7 +16,7 @@
 export default {
   data: function () {
     return {
-      currentPage: 5
+      currentPage: 1
     }
   },
   methods: {

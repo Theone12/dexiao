@@ -16,6 +16,7 @@ import Picture from './components/Picture'
 import New from './components/New'
 import Seller from './components/Seller'
 import Password from './components/Password'
+import NewsAdd from './components/NewsAdd.vue'
 
 Vue.config.debug = true
 Vue.use(Router)
@@ -25,6 +26,7 @@ const router = new Router({
   routes: [
     { name: 'login', path: '/', component: Login },
     { name: 'index', path: '/index', component: Index },
+    { name: 'newsAdd', path: '/newsadd', component: NewsAdd },
     {
       path: '/index',
       component: Index,
