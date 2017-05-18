@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 import App from './App'
 import Login from './components/Login'
 import Index from './components/Index'
@@ -17,7 +18,7 @@ import Password from './components/Password'
 
 Vue.config.debug = true
 Vue.use(Router)
-
+Vue.use(ElementUI)
 const router = new Router({
   routes: [
     { name: 'login', path: '/', component: Login },
