@@ -16,7 +16,7 @@ export default {
   data () {
     return {
       src: '/images/4.jpg',
-      name: 'xxx',
+      name: 'admin',
       time: 'x年x月x日',
       day: '星期几'
     }

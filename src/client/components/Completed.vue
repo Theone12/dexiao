@@ -48,7 +48,7 @@
 </template>
 
 <script>
- import page from './VuePage.vue'
+ import page from './Page.vue'
 export default {
    data () {
      return {

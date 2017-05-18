@@ -93,7 +93,7 @@ export default {
   .bottom .lab {
     margin-top: 50px;
   }
-  .bottom input[type="submit"] {
+  .bottom input[type="button"] {
     display: inline-block;
     width: 100px;
     margin: 40px 0 30px 110px;

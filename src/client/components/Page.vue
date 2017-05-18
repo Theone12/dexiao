@@ -1,5 +1,5 @@
 <template>
-  <div class="block" id="block">
+  <div class="block">
     <el-pagination class="main"
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
@@ -32,11 +32,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
- #block {
+ .block {
    position: absolute;
    left: 0;
-   bottom: 20px;
-   margin: 0 auto;
+   bottom: 25px;
  }
-
+ .block .main {
+   margin-left: 40%;
+ }
 </style>
