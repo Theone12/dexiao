@@ -7,12 +7,11 @@
       </div>
       <div class='bottom'>
         <form action=''>
-          <label for='username' class='lab'>用户名</label><input type='text' id='username'><br/>
-          <label for='pwd'>密码</label><input type='text' id='pwd'><br/>
-          <input type='submit' value='登录'>
+          <label for='username' class='lab'>用户名</label><input v-model="name" type='text' id='username'><br/>
+          <label for='pwd'>密码</label><input v-model="password" type='text' id='pwd'><br/>
+          <input type='button' value='登录' @click="get">
         </form>
       </div>
-      <router-link :to="{ name: 'index'}">Index</router-link>
     </div>
   </div>
 </template>
@@ -25,7 +24,28 @@ export default {
       bgImg: {
         background: "url('/images/18.jpg')",
         backgroundSize: '100% 100%'
+      },
+      name: '',
+      password: ''
+    }
+  },
+  methods: {
+    get() {
+      let para = {
+        name: this.name,
+        password: this.password
       }
+      this.$http.get('/admin/login', {
+        params: para
+      }, {
+        emulateJSON: true
+      }).then(function(data) {
+        if (data.body.state === 1) {
+          this.$router.push({ path: '/index' })
+        } else {
+          alert('请输入正确的用户名和密码！！！')
+        }
+      })
     }
   }
 }

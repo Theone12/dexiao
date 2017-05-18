@@ -6,7 +6,7 @@
     </div>
     <div class='right'>
      <p>欢迎您<span>{{ name }}</span><span>{{ time }}</span><span>{{ day }}</span></p>
-      <p><i></i><span>注销</span></p>
+      <p><i></i><span @click="logout">注销</span></p>
     </div>
   </div>
 </template>
@@ -19,6 +19,18 @@ export default {
       name: 'xxx',
       time: 'x年x月x日',
       day: '星期几'
+    }
+  },
+  methods: {
+    logout() {
+      this.$http.get('/admin/logout', {
+      }, {
+        emulateJSON: true
+      }).then(function(data) {
+        if (data.body.state === 1) {
+          this.$router.push({ path: '/' })
+        }
+      })
     }
   }
 }
