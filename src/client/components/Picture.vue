@@ -1,63 +1,78 @@
 <template>
-  <div class='picture'>
-    <div class="indexBanner">
-      <h3>首页轮播</h3>
-      <upload></upload>
-      <upload></upload>
-      <upload></upload>
-      <upload></upload>
+  <div class="table">
+    <div class="crumbs">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item><i class="el-icon-menu"></i> 文档管理</el-breadcrumb-item>
+        <el-breadcrumb-item>图片列表</el-breadcrumb-item>
+      </el-breadcrumb>
     </div>
-    <div class="newsBanner">
-      <h3>新闻管理轮播</h3>
-      <upload></upload>
-      <upload></upload>
-      <upload></upload>
-    </div>
-    <div class="news">
-      <h3>新闻内广告</h3>
-      <upload></upload>
-      <upload></upload>
-      <upload></upload>
-    </div>
+    <h3>首页轮播</h3>
+    <el-table :data="indexlist" border style="width: 100%">
+      <el-table-column prop="id" label="序号" sortable width="50"></el-table-column>
+      <el-table-column prop="picture" label="图片" width="150"></el-table-column>
+      <el-table-column label="操作" width="120">
+        <template scope="scope">
+          <el-button @click="edite" type="text" size="small">编辑</el-button>
+          <el-button @click="del" type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <h3>新闻管理轮播</h3>
+    <el-table :data="newslist" border style="width: 100%">
+      <el-table-column prop="id" label="序号" sortable width="50"></el-table-column>
+      <el-table-column prop="picture" label="图片" width="150"></el-table-column>
+      <el-table-column label="操作" width="120">
+        <template scope="scope">
+          <el-button @click="edite" type="text" size="small">编辑</el-button>
+          <el-button @click="del" type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <h3>新闻内广告</h3>
+    <el-table :data="guanggao" border style="width: 100%">
+      <el-table-column prop="id" label="序号"  width="50"></el-table-column>
+      <el-table-column prop="picture" label="图片" width="150"></el-table-column>
+      <el-table-column label="操作" width="120">
+        <template scope="scope">
+          <el-button @click="edite" type="text" size="small">编辑</el-button>
+          <el-button @click="del" type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
-
 <script>
-import upload from './Upload.vue'
-export default {
-  data () {
-    return {
+  export default {
+    data() {
+      return {
+        indexlist: [
+          { id: 1, picture: '图片225' },
+          { id: 2, picture: '图片226' },
+          { id: 3, picture: '图片227' },
+          { id: 4, picture: '图片227' }
+        ],
+        newslist: [
+          { id: 1, picture: '图片125' },
+          { id: 2, picture: '图片126' },
+          { id: 3, picture: '图片127' }
+        ],
+        guanggao: [
+          { id: 1, picture: '图片125' },
+          { id: 2, picture: '图片126' },
+          { id: 3, picture: '图片127' }
+        ]
+      }
+    },
+    methods: {
+      edite() {
+        console.log(2)
+      },
+      del() {
+        console.log(1)
+      }
     }
-  },
-  components: {
-    upload
   }
-}
+
 </script>
-<style scoped>
-  .picture {
-    position: relative;
-    text-align: center;
-  }
-  .indexBanner{
-    position: absolute;
-    left: 0;
-    width: 200px;
-    height: 400px;
-  }
-  .newsBanner {
-    position: absolute;
-    left: 200px;
-    width: 200px;
-    height: 200px;
-  }
-  .news {
-    position: absolute;
-    left: 400px;
-    width: 200px;
-    height: 200px;
-  }
-  h3 {
-    font-size: 15px;
-  }
+<style>
 </style>

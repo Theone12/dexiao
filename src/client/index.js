@@ -7,6 +7,7 @@ import App from './App'
 import Login from './components/Login'
 import Index from './components/Index'
 import User from './components/User'
+import Readme from './components/Readme'
 import UserVip from './components/UserVip'
 import UserShop from './components/UserShop'
 import Completed from './components/Completed'
@@ -25,22 +26,22 @@ Vue.use(VueResource)
 const router = new Router({
   routes: [
     { name: 'login', path: '/', component: Login },
-    { name: 'index', path: '/index', component: Index },
-    { name: 'newsAdd', path: '/newsadd', component: NewsAdd },
     {
-      path: '/index',
+      path: '/readme',
       component: Index,
       children: [
-         { path: '/index/user', component: User },
-         { path: '/index/userVip', component: UserVip },
-         { path: '/index/userShop', component: UserShop },
-         { path: '/index/completed', component: Completed },
-         { path: '/index/unfinished', component: Unfinished },
-         { path: '/index/news', component: News },
-         { path: '/index/picture', component: Picture },
-         { path: '/index/new', component: New },
-         { path: '/index/seller', component: Seller },
-         { path: '/index/password', component: Password }
+         { path: '/', component: Readme },
+         { path: '/user', component: User },
+         { path: '/userVip', component: UserVip },
+         { path: '/userShop', component: UserShop },
+         { path: '/completed', component: Completed },
+         { path: '/unfinished', component: Unfinished },
+         { path: '/news', component: News },
+         { path: '/newsadd', component: NewsAdd },
+         { path: '/picture', component: Picture },
+         { path: '/new', component: New },
+         { path: '/seller', component: Seller },
+         { path: '/password', component: Password }
       ]
     }
   ]

@@ -1,66 +1,89 @@
 <template>
-  <div class='newsAdd'>
-    <el-form ref="form" :model="form" label-width="80px">
-      <el-form-item label="新闻标题">
-        <el-input v-model="form.name"></el-input>
-      </el-form-item>
-      <el-form-item label="创建时间">
-        <el-col :span="11">
-          <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
-        </el-col>
-        <el-col class="line" :span="2">-</el-col>
-        <el-col :span="11">
-          <el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
-        </el-col>
-      </el-form-item>
-      <div class="upload-demo"><upload></upload></div>
-      <el-form-item label="新闻内容">
-        <el-input type="textarea" v-model="form.desc"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit"><router-link to="/index/news" class="add">提交</router-link></el-button>
-        <el-button>取消</el-button>
-      </el-form-item>
-    </el-form>
+  <div>
+    <div class="crumbs">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item><i class="el-icon-date"></i> 文档管理</el-breadcrumb-item>
+        <el-breadcrumb-item>新闻列表</el-breadcrumb-item>
+        <el-breadcrumb-item>添加新闻</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div class="form-box">
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="新闻标题">
+          <el-input v-model="form.name"></el-input>
+        </el-form-item>
+        <div class="picture">
+          <el-upload
+                class="upload-demo"
+                action="https://jsonplaceholder.typicode.com/posts/"
+                :on-preview="handlePreview"
+                :on-remove="handleRemove"
+                :file-list="fileList2"
+                list-type="picture">
+          <el-button size="small" type="primary">点击上传</el-button>
+          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </div>
+        <div class="edbtn">
+          <quill-editor ref="myTextEditor" v-model="content" :config="editorOption"></quill-editor>
+        </div>
+        <el-form-item >
+          <el-button type="primary" @click="onSubmit" >提交</el-button>
+          <el-button>取消</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 
 <script>
-import upload from './Upload.vue'
-export default {
-  data () {
-    return {
-      form: {
-        name: '',
-        date1: '',
-        date2: '',
-        desc: ''
+  import { quillEditor } from 'vue-quill-editor'
+  export default {
+    data: function() {
+      return {
+        form: {
+          name: ''
+        },
+        fileList2: [
+          {name: 'food.jpeg', url: 'images/2.jpg'},
+          {name: 'food2.jpeg', url: 'images/2.1.jpg'}
+        ],
+        content: '<p>Hello BBK</p>',
+        editorOption: {
+          // something config
+        }
+      }
+    },
+    components: {
+      quillEditor
+    },
+    methods: {
+      onSubmit() {
+        this.$message.success('提交成功！')
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList)
+      },
+      handlePreview(file) {
+        console.log(file)
+      },
+      onEditorChange({ editor, html, text }) {
+        this.content = html
+      }
+    },
+    computed: {
+      editor() {
+        return this.$refs.myTextEditor.quillEditor
       }
     }
-  },
-  methods: {
-    onSubmit() {
-      console.log('submit!')
-    }
-  },
-  components: {
-    upload
   }
-}
 </script>
-
 <style scoped>
-  .newsAdd {
-    width: 60%;
-    margin: 50px auto;
-    font-size: 15px;
+  .picture {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
-  .upload-demo {
-    width: 200px;
-    height: 80px;
-    margin: 15px 15px;
-  }
-  .newsAdd .add {
-    text-decoration: none;
+  .edbtn{
+    margin-bottom: 20px;
   }
 </style>

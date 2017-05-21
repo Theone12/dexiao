@@ -1,12 +1,14 @@
 <template>
-  <div class='head'>
-    <div class='left'>
-      <img :src='src' alt='logo'>
-      <span>徳孝后台管理系统</span>
-    </div>
-    <div class='right'>
-     <p>欢迎您<span>{{ name }}</span><span>{{ time }}</span><span>{{ day }}</span></p>
-      <p><i></i><span @click="logout">注销</span></p>
+  <div class="header">
+    <div class="logo">徳孝后台管理系统</div>
+    <div class="user-info">
+      <el-dropdown trigger="click">
+        <span class="el-dropdown-link">
+          <img class="user-logo" src="../common/img/img.jpg">
+          {{name}}
+          <span @click="logout" class="loginout">注销</span>
+        </span>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -15,10 +17,7 @@
 export default {
   data () {
     return {
-      src: '/images/4.jpg',
-      name: 'admin',
-      time: 'x年x月x日',
-      day: '星期几'
+      name: 'admin'
     }
   },
   methods: {
@@ -37,39 +36,44 @@ export default {
 </script>
 
 <style scoped>
-  .head {
-    height: 15%;
-    background-color: #9da0a4;
+  .header {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    font-size: 22px;
+    line-height: 70px;
+    color: #fff;
   }
-  .left {
-    width: 50%;
-    height: 100%;
+  .header .logo{
     float: left;
+    width:250px;
+    text-align: center;
   }
-  .left img {
+  .user-info {
+    float: right;
+    padding-right: 50px;
+    font-size: 16px;
+    color: #fff;
+  }
+  .user-info .el-dropdown-link{
+    position: relative;
     display: inline-block;
-    margin:10px 0 0 20px;
+    padding-left: 50px;
+    color: #fff;
+    cursor: pointer;
     vertical-align: middle;
-    width: 50px;
-    height: 50px;
   }
-  .left span {
-    display: inline-block;
-    margin-left: 15px;
-    font: 500 20px/100% '微软雅黑';
+  .user-info .user-logo{
+    position: absolute;
+    left:0;
+    top:15px;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
   }
-  .right {
-    width: 50%;
-    float: left;
-    text-align: right;
-  }
-  .right p {
-    padding-right: 25px;
-    font-size: 14px;
-    line-height: 30px;
-    height:30px;
-  }
-  .right p span {
-    padding-left: 10px;
+  .loginout{
+    padding-left: 20px;
+    color:red;
   }
 </style>

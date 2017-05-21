@@ -2,7 +2,7 @@
   <div class="bigBox" :style="bgImg">
     <div class='loginBox'>
       <div class='top'>
-        <img :src='src' alt='美女'>
+        <img :src='src'>
         <span>徳孝登录系统</span>
       </div>
       <div class='bottom'>
@@ -41,7 +41,7 @@ export default {
         emulateJSON: true
       }).then(function(data) {
         if (data.body.state === 1) {
-          this.$router.push({ path: '/index' })
+          this.$router.push({ path: '/readme' })
         } else {
           alert('请输入正确的用户名和密码！！！')
         }
@@ -51,7 +51,6 @@ export default {
 }
 </script>
 <style scoped>
-  
   .bigBox {
     height: 100%;
   }

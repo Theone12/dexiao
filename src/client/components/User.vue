@@ -1,121 +1,52 @@
 <template>
-  <div class='user'>
-    <div class="top">
-      <span class="topLeft">用户列表</span>
-      <span class="topRight">选择类型</span>
-      <select name='user'>
-        <option value="1">姓名</option>
-        <option value="2">积分</option>
-        <option value="3">等级</option>
-        <option value="4">称号</option>
-      </select>
-      <input type="button" value="搜索">
+  <div class="table">
+    <div class="crumbs">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item><i class="el-icon-menu"></i> 用户管理</el-breadcrumb-item>
+        <el-breadcrumb-item>普通用户</el-breadcrumb-item>
+      </el-breadcrumb>
     </div>
-    <div class="bottom">
-      <table>
-        <thead>
-          <tr>
-            <th>序号</th>
-            <th>姓名</th>
-            <th>积分/公分</th>
-            <th>等级</th>
-            <th>称号</th>
-            <th>发布任务</th>
-            <th>接收任务</th>
-            <th>完成次数</th>
-            <th>注册时间</th>
-            <th>操作</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr v-for='x in tblist'>
-              <td>{{ x.id }}</td>
-              <td>{{ x.name }}</td>
-              <td>{{ x.score }}</td>
-              <td>{{ x.grade }}</td>
-              <td>{{ x.title }}</td>
-              <td>{{ x.tasks }}</td>
-              <td>{{ x.receive }}</td>
-              <td> {{ x.complete }}</td>
-              <td>{{ x.register }}</td>
-              <td><a>{{ x.operation }}</a></td>
-            </tr>
-        </tbody>
-      </table>
-      <page></page>
-    </div>
+    <el-table :data="tableData" border style="width: 100%" class="v-tab" >
+      <el-table-column fixed prop="phone" label="手机号" width="140" class="v-th"></el-table-column>
+      <el-table-column prop="id" label="序号" width="50" class="v-th"></el-table-column>
+      <el-table-column prop="name" label="昵称" width="100" class="v-th"></el-table-column>
+      <el-table-column prop="integral" label="积分" width="100" class="v-th"></el-table-column>
+      <el-table-column prop="points" label="公分" width="100" class="v-th"></el-table-column>
+      <el-table-column prop="grade" label="等级" width="80" class="v-th" ></el-table-column>
+      <el-table-column prop="title" label="称号" width="100" class="v-th" ></el-table-column>
+      <el-table-column prop="publish" label="发布任务" width="120" class="v-th" ></el-table-column>
+      <el-table-column prop="register" label="注册时间" width="120" class="v-th" ></el-table-column>
+      <el-table-column fixed="right" label="操作" width="80" class="v-th">
+        <template scope="scope">
+          <el-button @click="del" type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+   <page></page>
   </div>
 </template>
 
 <script>
- import page from './Page.vue'
+import page from './Page.vue'
 export default {
-   data () {
-     return {
-       tblist: [
-          { id: 1, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-          { id: 2, name: '李四', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-          { id: 3, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' },
-          { id: 4, name: '张三', score: '500/1000', grade: '4级', title: '徳孝知府', tasks: 5, receive: 4, complete: 3, register: '2017/06/15', operation: '删除' }
-       ]
-     }
-   },
-   components: {
-     page
-   }
+  data() {
+    return {
+      tableData: [
+        { phone: '15010848312', id: 1, name: '王小虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, register: '2017/6/16' },
+        { phone: '15010848312', id: 1, name: '王小虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, register: '2017/6/16' },
+        { phone: '15010848312', id: 1, name: '王小虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, register: '2017/6/16' },
+        { phone: '15010848312', id: 1, name: '王小虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, register: '2017/6/16' }
+      ]
+    }
+  },
+  components: {
+    page
+  },
+  methods: {
+    del() {
+      console.log(1)
+    }
+  }
 }
 </script>
 
-<style scoped>
-  .user {
-    width: 100%;
-    height: 95%;
-    padding-top: 5px;
-  }
-  .top {
-    height: 30px;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 30px;
-    position: relative;
-  }
-  .top span {
-    display: inline-block;
-    margin-left: 10px;
-  }
-  .top .topRight {
-    position: absolute;
-    right: 200px;
-  }
-  .top select {
-    display: inline-block;
-    position: absolute;
-    right: 115px;
-    margin-top: 2px;
-    width: 80px;
-    height: 25px;
-  }
-  .top input[type="button"]{
-    display: inline-block;
-    position: absolute;
-    right: 40px;
-    margin-top: 2px;
-    width: 50px;
-    height: 25px;
-  }
-  .bottom {
-    width: 100%;
-    margin-top: 15px;
-  }
-  .bottom table {
-    width: 95%;
-    border: 2px solid #000;
-    margin-left: 15px;
-    border-collapse: collapse;
-  }
-  .bottom table tr th,.bottom table tr td{
-    text-align: center;
-    font-size: 14px;
-    border:1px solid #000;
-  }
-</style>
