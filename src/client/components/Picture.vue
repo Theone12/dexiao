@@ -8,8 +8,8 @@
     </div>
     <h3>首页轮播</h3>
     <el-table :data="indexlist" border style="width: 100%">
-      <el-table-column prop="id" label="序号" sortable width="50"></el-table-column>
-      <el-table-column prop="picture" label="图片" width="150"></el-table-column>
+      <el-table-column prop="id" label="序号" sortable width="100"></el-table-column>
+      <el-table-column prop="picture" label="图片" width="200"></el-table-column>
       <el-table-column label="操作" width="120">
         <template scope="scope">
           <el-button @click="edite" type="text" size="small">编辑</el-button>
@@ -19,8 +19,8 @@
     </el-table>
     <h3>新闻管理轮播</h3>
     <el-table :data="newslist" border style="width: 100%">
-      <el-table-column prop="id" label="序号" sortable width="50"></el-table-column>
-      <el-table-column prop="picture" label="图片" width="150"></el-table-column>
+      <el-table-column prop="id" label="序号" sortable width="100"></el-table-column>
+      <el-table-column prop="picture" label="图片" width="200"></el-table-column>
       <el-table-column label="操作" width="120">
         <template scope="scope">
           <el-button @click="edite" type="text" size="small">编辑</el-button>
@@ -30,8 +30,8 @@
     </el-table>
     <h3>新闻内广告</h3>
     <el-table :data="guanggao" border style="width: 100%">
-      <el-table-column prop="id" label="序号"  width="50"></el-table-column>
-      <el-table-column prop="picture" label="图片" width="150"></el-table-column>
+      <el-table-column prop="id" label="序号"  width="100"></el-table-column>
+      <el-table-column prop="picture" label="图片" width="200"></el-table-column>
       <el-table-column label="操作" width="120">
         <template scope="scope">
           <el-button @click="edite" type="text" size="small">编辑</el-button>
@@ -65,7 +65,7 @@
     },
     methods: {
       edite() {
-        console.log(2)
+        this.$router.push({ path: '/pictureedite' })
       },
       del() {
         console.log(1)

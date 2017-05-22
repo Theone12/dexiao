@@ -8,7 +8,7 @@
     </div>
     <button class="btn"><router-link to='/newsadd'>添加</router-link></button>
     <el-table :data="newslist" border style="width: 100%">
-      <el-table-column prop="id" label="序号" sortable width="50"></el-table-column>
+      <el-table-column prop="id" label="序号" sortable width="80"></el-table-column>
       <el-table-column prop="title" label="标题" width="150"></el-table-column>
       <el-table-column prop="main" label="内容" width="300"></el-table-column>
       <el-table-column prop="time" label="时间" width="120"></el-table-column>
@@ -40,7 +40,7 @@
     },
     methods: {
       edite() {
-        console.log(2)
+        this.$router.push({ path: '/newsedite' })
       },
       del() {
         console.log(1)

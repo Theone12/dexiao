@@ -3,7 +3,7 @@
     <div class="crumbs">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item><i class="el-icon-menu"></i> 用户管理</el-breadcrumb-item>
-        <el-breadcrumb-item>会员管理</el-breadcrumb-item>
+        <el-breadcrumb-item>商户用户</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <el-table :data="tableData" border style="width: 100%" class="v-tab" >

@@ -3,7 +3,7 @@
     <div class="crumbs">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item><i class="el-icon-menu"></i> 用户管理</el-breadcrumb-item>
-        <el-breadcrumb-item>商户用户</el-breadcrumb-item>
+        <el-breadcrumb-item>会员用户</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <el-table :data="tableData" border style="width: 100%" class="v-tab" >
@@ -34,10 +34,10 @@
     data() {
       return {
         tableData: [
-          { phone: '15010848312', id: 1, name: '王小虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resevice: 4, completed: 3, register: '2017/6/16' },
-          { phone: '15010848312', id: 2, name: '张小明', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resevice: 4, completed: 3, register: '2017/6/16' },
-          { phone: '15010848312', id: 3, name: '李小帅', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resevice: 4, completed: 3, register: '2017/6/16' },
-          { phone: '15010848312', id: 4, name: '王大虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resevice: 4, completed: 3, register: '2017/6/16' }
+          { phone: '15010848312', id: 1, name: '王小虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resecive: 4, completed: 3, register: '2017/6/16' },
+          { phone: '15010848312', id: 2, name: '张小明', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resecive: 4, completed: 3, register: '2017/6/16' },
+          { phone: '15010848312', id: 3, name: '李小帅', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resecive: 4, completed: 3, register: '2017/6/16' },
+          { phone: '15010848312', id: 4, name: '王大虎', integral: 500, points: 160, grade: '4级', title: '徳孝知府', publish: 5, resecive: 4, completed: 3, register: '2017/6/16' }
         ]
       }
     },

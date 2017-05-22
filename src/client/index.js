@@ -13,9 +13,15 @@ import UserShop from './components/UserShop'
 import Completed from './components/Completed'
 import Unfinished from './components/Unfinished'
 import News from './components/News'
+import NewsEdite from './components/NewsEdite'
 import Picture from './components/Picture'
+import PictureEdite from './components/PictureEdite'
 import New from './components/New'
+import NewAdd from './components/NewAdd'
+import NewEdite from './components/NewEdite'
 import Seller from './components/Seller'
+import SellerAdd from './components/SellerAdd'
+import SellerEdite from './components/SellerEdite'
 import Password from './components/Password'
 import NewsAdd from './components/NewsAdd.vue'
 
@@ -38,9 +44,15 @@ const router = new Router({
          { path: '/unfinished', component: Unfinished },
          { path: '/news', component: News },
          { path: '/newsadd', component: NewsAdd },
+         { path: '/newsedite', component: NewsEdite },
          { path: '/picture', component: Picture },
+         { path: '/pictureedite', component: PictureEdite },
          { path: '/new', component: New },
+         { path: '/newadd', component: NewAdd },
+         { path: '/newedite', component: NewEdite },
          { path: '/seller', component: Seller },
+         { path: '/selleradd', component: SellerAdd },
+         { path: '/selleredite', component: SellerEdite },
          { path: '/password', component: Password }
       ]
     }
