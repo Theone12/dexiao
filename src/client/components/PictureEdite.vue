@@ -2,7 +2,7 @@
   <div>
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item><i class="el-icon-date"></i> 文档管理</el-breadcrumb-item>
+        <el-breadcrumb-item><i class="el-icon-message"></i> 文档管理</el-breadcrumb-item>
         <el-breadcrumb-item>图片管理</el-breadcrumb-item>
         <el-breadcrumb-item>图片编辑</el-breadcrumb-item>
       </el-breadcrumb>

@@ -4,14 +4,14 @@
       <template v-for="item in items">
         <template v-if="item.subs">
           <el-submenu :index="item.index">
-            <template slot="title"><i class="el-icon-menu"></i>{{ item.title }}</template>
+            <template slot="title"><i :class="[item.icon]"></i>{{ item.title }}</template>
             <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">{{ subItem.title }}
             </el-menu-item>
           </el-submenu>
         </template>
         <template v-else>
           <el-menu-item :index="item.index">
-            <i class="el-icon-setting"></i>{{ item.title }}
+            <i class="el-icon-star-on"></i>{{ item.title }}
           </el-menu-item>
         </template>
       </template>
@@ -31,6 +31,7 @@ export default {
         {
           index: '2',
           title: '用户管理',
+          icon: 'el-icon-menu',
           subs: [
             {
               index: 'user',
@@ -49,6 +50,7 @@ export default {
         {
           index: '3',
           title: '任务管理',
+          icon: 'el-icon-document',
           subs: [
             {
               index: 'completed',
@@ -63,6 +65,7 @@ export default {
         {
           index: '4',
           title: '文档管理',
+          icon: 'el-icon-message',
           subs: [
             {
               index: 'news',
@@ -77,6 +80,7 @@ export default {
         {
           index: '5',
           title: '商城管理',
+          icon: 'el-icon-upload',
           subs: [
             {
               index: 'new',
@@ -91,6 +95,7 @@ export default {
         {
           index: '6',
           title: '系统管理',
+          icon: 'el-icon-setting',
           subs: [
             {
               index: 'password',

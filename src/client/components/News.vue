@@ -2,7 +2,7 @@
   <div class="table">
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item><i class="el-icon-menu"></i> 文档管理</el-breadcrumb-item>
+        <el-breadcrumb-item><i class="el-icon-message"></i> 文档管理</el-breadcrumb-item>
         <el-breadcrumb-item>新闻列表</el-breadcrumb-item>
       </el-breadcrumb>
     </div>

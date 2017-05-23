@@ -2,7 +2,7 @@
   <div class="table">
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item><i class="el-icon-menu"></i> 任务管理</el-breadcrumb-item>
+        <el-breadcrumb-item><i class="el-icon-document"></i> 任务管理</el-breadcrumb-item>
         <el-breadcrumb-item>未完成任务</el-breadcrumb-item>
       </el-breadcrumb>
     </div>

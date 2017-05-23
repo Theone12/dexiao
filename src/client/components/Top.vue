@@ -6,7 +6,7 @@
         <span class="el-dropdown-link">
           <img class="user-logo" src="../common/img/img.jpg">
           {{name}}
-          <span @click="logout" class="loginout">注销</span>
+          <span @click="logout" class="loginout"><i class="el-icon-warning"></i> 注销</span>
         </span>
       </el-dropdown>
     </div>

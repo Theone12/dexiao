@@ -2,7 +2,7 @@
   <div>
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item><i class="el-icon-date"></i> 商城管理</el-breadcrumb-item>
+        <el-breadcrumb-item><i class="el-icon-upload"></i> 商城管理</el-breadcrumb-item>
         <el-breadcrumb-item>新品上市</el-breadcrumb-item>
         <el-breadcrumb-item>商品添加</el-breadcrumb-item>
       </el-breadcrumb>

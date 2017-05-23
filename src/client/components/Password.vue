@@ -1,5 +1,11 @@
 <template>
   <div class='user'>
+    <div class="crumbs">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item><i class="el-icon-setting"></i> 系统管理</el-breadcrumb-item>
+        <el-breadcrumb-item>修改密码</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <form action="">
       <label for="old">原来密码</label><input type="password" id="old"><br/>
       <label for="new">新密码</label><input type="password" id="new"><br/>
